@@ -29,50 +29,45 @@
     <header class="hero join">
       <div class="hero-text">
         <span class="eyebrow">입점 안내</span>
-        <h1>이 거리에<br>우리 가게 불을 켜 드려요</h1>
-        <p class="tagline">영업 중인 가게만 창문에 불이 켜지는 3D 거리, 살롱골목</p>
+        <h1><em>500원</em>에<br>우리 가게 불 켜 드려요</h1>
+        <p class="tagline">한 번만 내요 · 어느 층이든 같아요</p>
       </div>
     </header>
     <section>
-      <h2>입점하면 생기는 것</h2>
-      <ul class="steps">
-        <li><b>거리 위의 우리 가게</b><span>건물 한 층에 간판과 창문이 생겨요. 손님이 거리를 걷다가 눌러서 들어와요.</span></li>
-        <li><b>가게 페이지</b><span>가격표, 사진, 예약 링크, 영업시간, 오시는 길을 한 화면에 담아요.</span></li>
-        <li><b>영업시간에 맞춰 켜지는 불</b><span>문 여는 시간에 창문 불과 OPEN 네온이 켜지고, 닫으면 꺼져요. 따로 하실 일은 없어요.</span></li>
-      </ul>
+      <h2>받는 것</h2>
+      <div class="tri">
+        <div><b>거리 위 우리 가게</b><span>간판과 창문</span></div>
+        <div><b>가게 페이지</b><span>가격 · 사진 · 예약</span></div>
+        <div><b>자동으로 켜지는 불</b><span>영업시간에 맞춰</span></div>
+      </div>
     </section>
     <section>
-      <h2>진행 순서</h2>
-      <ol class="steps num">
-        <li><b>DM으로 문의</b><span>가게 이름과 동네를 알려 주세요.</span></li>
-        <li><b>가게 정보 보내기</b><span>가격표, 사진, 영업시간, 예약 링크를 받아요.</span></li>
-        <li><b>시안 확인</b><span>거리에 들어간 모습과 가게 페이지를 먼저 보여 드려요.</span></li>
-        <li><b>불 켜기</b><span>확인이 끝나면 거리에 입점해요. 이후 가격·사진 수정도 도와드려요.</span></li>
-      </ol>
+      <h2>순서</h2>
+      <ol class="flow"><li>DM 보내기</li><li>가게 정보 전달</li><li>시안 확인</li><li>입점</li></ol>
     </section>
     <section>
-      <h2>비용</h2>
-      <p class="big">입점비 500원 · 한 번만</p>
-      <p>어느 층이든 같아요. 지금은 거리를 여는 시기라 이 가격으로 받고 있고, 나중에 바뀔 수 있어요.</p>
-    </section>
-    <section>
-      <h2>지금 비어 있는 자리</h2>
-      ${n.length?`
+      <h2>빈 자리</h2>
+      ${(n.length?`
     <div class="map">${n.map(e=>`
       <div class="bld"><div>${e.floors.map(e=>`<span class="fl${e.name?` lit`:``}">${e.name?S(e.name):`${e.f}F`}</span>`).join(``)}</div><small>${S(e.no)}번지</small></div>`).join(``)}
     </div>
-    <p class="muted">불 켜진 칸은 입점한 가게, 어두운 칸이 빈 자리예요.</p>`:``}
-      ${t.length?`<ul class="prices">${t.map(e=>`<li><span>살롱골목 1번가 ${S(e.no)}번지</span><i></i><b>${e.floors.map(e=>e+`층`).join(` · `)}</b></li>`).join(``)}</ul>
-           <p class="muted">거리에서 불 꺼진 층을 누르면 그 자리를 직접 볼 수 있어요.</p>`:`<p>지금은 빈 자리가 없어요. DM 주시면 다음 거리가 열릴 때 먼저 알려 드려요.</p>`}
+    <p class="muted">금색 칸은 입점한 가게, 어두운 칸이 빈 자리예요.</p>`:``)||`<p>DM 주시면 빈 자리를 알려 드려요.</p>`}
     </section>
     <section>
-      <h2>약속</h2>
-      <ul class="list">
-        <li>사장님 동의를 받은 가게만 이름·사진·가격을 올려요.</li>
-        <li>지금 거리에 있는 가게는 모두 가상 샘플이에요. 실제 가게가 아니에요.</li>
-      </ul>
+      <details>
+        <summary>더 자세히 보기</summary>
+        <ul class="list">
+          <li>거리 위 우리 가게: 건물 한 층에 간판과 창문이 생겨요. 손님이 거리를 걷다가 눌러서 들어와요.</li>
+          <li>가게 페이지: 가격표, 사진, 예약 링크, 영업시간, 오시는 길을 한 화면에 담아요.</li>
+          <li>자동으로 켜지는 불: 문 여는 시간에 창문 불과 OPEN 네온이 켜지고, 닫으면 꺼져요. 따로 하실 일은 없어요.</li>
+          <li>DM에는 가게 이름과 동네만 먼저 알려 주세요. 가격표, 사진, 영업시간, 예약 링크는 그다음에 받아요.</li>
+          <li>거리에 들어간 모습과 가게 페이지를 먼저 보여 드리고, 확인이 끝나면 입점해요. 이후 가격·사진 수정도 도와드려요.</li>
+          <li>입점비 500원은 거리를 여는 시기의 가격이에요. 나중에 바뀔 수 있어요.</li>
+          <li>사장님 동의를 받은 가게만 이름·사진·가격을 올려요. 지금 거리에 있는 가게는 모두 가상 샘플이에요.</li>
+        </ul>
+      </details>
     </section>
-    <footer>${M()}</footer>`,e.scrollTop=0}function P(e,t,n=!1){let r=t.filter(e=>e.state.open).length,i=e=>{let t=(e.prices??[]).find(e=>typeof e.price==`number`);return t?`${S(t.item)} ${w(t.price)}${t.from?`부터`:``}`:``};e.innerHTML=`
+    <footer class="cta">${M()}<small>가게 이름과 동네만 보내 주세요</small></footer>`,e.scrollTop=0}function P(e,t,n=!1){let r=t.filter(e=>e.state.open).length,i=e=>{let t=(e.prices??[]).find(e=>typeof e.price==`number`);return t?`${S(t.item)} ${w(t.price)}${t.from?`부터`:``}`:``};e.innerHTML=`
     ${n?``:`<a class="chip close" href="#">← 거리로</a>`}
     <header class="hero join">
       <div class="hero-text">
@@ -97,4 +92,4 @@
     <footer>
       <p>이 거리에 우리 가게 불도 켜고 싶다면</p>
       <a class="btn line" href="#/join">입점 안내 보기 →</a>
-    </footer>`;for(let n of e.querySelectorAll(`canvas.thumb`)){let e=t.find(e=>e.shop.id===n.dataset.shop)?.shop;e&&u(e).drawInterior?.(n.getContext(`2d`),n.width,n.height)}e.scrollTop=0}var F=d.map(e=>({no:e.no,floors:Array.from({length:e.floors},(t,n)=>{let r=e.floors-n,i=_.find(t=>t.building===e.no&&t.floor===r);return{f:r,name:i?v(i):null}})})),I=F.map(e=>({no:e.no,floors:e.floors.filter(e=>!e.name).map(e=>e.f).reverse()})).filter(e=>e.floors.length);function L(e,t=!1){let n=location.hash,r=y(decodeURIComponent(n.match(/^#\/shop\/(.+)$/)?.[1]??``));if(r)A(e,r,x(r));else if(n===`#/join`)N(e,I,F);else if(n===`#/list`)P(e,_.map(e=>({shop:e,state:x(e)})),t);else return e.hidden=!0,!1;return e.hidden=!1,!0}var R=`modulepreload`,z=function(e,t){return new URL(e,t).href},B={},V=function(e){return e.pathname.endsWith(`.css`)},H=function(e,t,n){if(t in e)return e[t];let r=n();if(!r){e[t]=void 0;return}let i=r.then(()=>{e[t]=void 0},n=>{throw e[t]=void 0,n});return e[t]=i,i},U=function(e,t,n){let r=Promise.resolve();if(t&&t.length>0){let e,i=document.querySelector(`meta[property=csp-nonce]`),a=i?.nonce||i?.getAttribute(`nonce`);function o(e){return Promise.all(e.map(e=>Promise.resolve(e).then(e=>({status:`fulfilled`,value:e}),e=>({status:`rejected`,reason:e}))))}function s(e){return import.meta.resolve?new URL(import.meta.resolve(e)):new URL(e,import.meta.url)}r=o(t.map(t=>{t=z(t,n);let r=s(t),i=V(r);return H(B,r.href,()=>{if(e===void 0){e={all:new Set,styles:new Set};let t=document.getElementsByTagName(`link`);for(let n=t.length-1;n>=0;n--){let r=t[n];e.all.add(r.href),r.rel===`stylesheet`&&e.styles.add(r.href)}}if((i?e.styles:e.all).has(r.href))return;let t=document.createElement(`link`);if(t.rel=i?`stylesheet`:R,i||(t.as=`script`),t.crossOrigin=``,t.href=r.href,a&&t.setAttribute(`nonce`,a),document.head.appendChild(t),i)return new Promise((e,n)=>{let i=a=>{t.removeEventListener(`load`,i),t.removeEventListener(`error`,i),a.type===`error`?n(Error(`Unable to preload CSS for ${r}`)):e(a)};t.addEventListener(`load`,i),t.addEventListener(`error`,i)})})}).filter(e=>e!==void 0))}function i(e){let t=new Event(`vite:preloadError`,{cancelable:!0});if(t.payload=e,window.dispatchEvent(t),!t.defaultPrevented)throw e}return r.then(t=>{for(let e of t||[])e.status===`rejected`&&i(e.reason);return e().catch(i)})},W=(()=>{try{let e=document.createElement(`canvas`);return!!(window.WebGLRenderingContext&&(e.getContext(`webgl2`)||e.getContext(`webgl`)))}catch{return!1}})();function G(){document.body.classList.add(`lite`,`in-shop`);let e=document.getElementById(`shop`),t=()=>{if(!L(e,!0))return location.replace(`#/list`);e.querySelector(`.close`)?.replaceChildren(`← 목록으로`)};addEventListener(`hashchange`,t),t()}W&&!new URLSearchParams(location.search).has(`lite`)?U(()=>import(`./main-BTkNMQkE.js`),[],import.meta.url).catch(G):G();export{v as a,u as i,x as n,_ as o,d as r,L as t};
+    </footer>`;for(let n of e.querySelectorAll(`canvas.thumb`)){let e=t.find(e=>e.shop.id===n.dataset.shop)?.shop;e&&u(e).drawInterior?.(n.getContext(`2d`),n.width,n.height)}e.scrollTop=0}var F=d.map(e=>({no:e.no,floors:Array.from({length:e.floors},(t,n)=>{let r=e.floors-n,i=_.find(t=>t.building===e.no&&t.floor===r);return{f:r,name:i?v(i):null}})})),I=F.map(e=>({no:e.no,floors:e.floors.filter(e=>!e.name).map(e=>e.f).reverse()})).filter(e=>e.floors.length);function L(e,t=!1){let n=location.hash,r=y(decodeURIComponent(n.match(/^#\/shop\/(.+)$/)?.[1]??``));if(r)A(e,r,x(r));else if(n===`#/join`)N(e,I,F);else if(n===`#/list`)P(e,_.map(e=>({shop:e,state:x(e)})),t);else return e.hidden=!0,!1;return e.hidden=!1,!0}var R=`modulepreload`,z=function(e,t){return new URL(e,t).href},B={},V=function(e){return e.pathname.endsWith(`.css`)},H=function(e,t,n){if(t in e)return e[t];let r=n();if(!r){e[t]=void 0;return}let i=r.then(()=>{e[t]=void 0},n=>{throw e[t]=void 0,n});return e[t]=i,i},U=function(e,t,n){let r=Promise.resolve();if(t&&t.length>0){let e,i=document.querySelector(`meta[property=csp-nonce]`),a=i?.nonce||i?.getAttribute(`nonce`);function o(e){return Promise.all(e.map(e=>Promise.resolve(e).then(e=>({status:`fulfilled`,value:e}),e=>({status:`rejected`,reason:e}))))}function s(e){return import.meta.resolve?new URL(import.meta.resolve(e)):new URL(e,import.meta.url)}r=o(t.map(t=>{t=z(t,n);let r=s(t),i=V(r);return H(B,r.href,()=>{if(e===void 0){e={all:new Set,styles:new Set};let t=document.getElementsByTagName(`link`);for(let n=t.length-1;n>=0;n--){let r=t[n];e.all.add(r.href),r.rel===`stylesheet`&&e.styles.add(r.href)}}if((i?e.styles:e.all).has(r.href))return;let t=document.createElement(`link`);if(t.rel=i?`stylesheet`:R,i||(t.as=`script`),t.crossOrigin=``,t.href=r.href,a&&t.setAttribute(`nonce`,a),document.head.appendChild(t),i)return new Promise((e,n)=>{let i=a=>{t.removeEventListener(`load`,i),t.removeEventListener(`error`,i),a.type===`error`?n(Error(`Unable to preload CSS for ${r}`)):e(a)};t.addEventListener(`load`,i),t.addEventListener(`error`,i)})})}).filter(e=>e!==void 0))}function i(e){let t=new Event(`vite:preloadError`,{cancelable:!0});if(t.payload=e,window.dispatchEvent(t),!t.defaultPrevented)throw e}return r.then(t=>{for(let e of t||[])e.status===`rejected`&&i(e.reason);return e().catch(i)})},W=(()=>{try{let e=document.createElement(`canvas`);return!!(window.WebGLRenderingContext&&(e.getContext(`webgl2`)||e.getContext(`webgl`)))}catch{return!1}})();function G(){document.body.classList.add(`lite`,`in-shop`);let e=document.getElementById(`shop`),t=()=>{if(!L(e,!0))return location.replace(`#/list`);e.querySelector(`.close`)?.replaceChildren(`← 목록으로`)};addEventListener(`hashchange`,t),t()}W&&!new URLSearchParams(location.search).has(`lite`)?U(()=>import(`./main-DTZQS5IM.js`),[],import.meta.url).catch(G):G();export{v as a,u as i,x as n,_ as o,d as r,L as t};
